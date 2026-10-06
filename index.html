@@ -5,153 +5,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SmartCalc - Free Online Calculators</title>
+<meta name="description" content="SmartCalc offers free, fast and easy online calculators including Percentage, BMI, Age, Discount, GST, Interest and EMI calculators.">
 
 <style>
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f7fb;
-    color:#222;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f4f7fb;
+  color:#222;
 }
 
 header{
-    background:linear-gradient(135deg,#1769aa,#0d47a1);
-    color:white;
-    text-align:center;
-    padding:40px 15px;
+  background:#2563eb;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
 }
 
 header h1{
-    font-size:42px;
-    margin:0 0 10px;
+  margin:0;
+  font-size:38px;
 }
 
 header p{
-    font-size:18px;
-    margin:0;
+  margin:8px 0 0;
+  font-size:17px;
 }
 
 .search{
-    max-width:600px;
-    margin:-25px auto 25px;
-    padding:0 15px;
+  max-width:600px;
+  margin:25px auto;
+  padding:0 15px;
 }
 
 .search input{
-    width:100%;
-    padding:16px;
-    border:0;
-    border-radius:10px;
-    box-shadow:0 3px 15px #ccc;
-    font-size:16px;
-    outline:none;
+  width:100%;
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:16px;
 }
 
 .container{
-    max-width:1100px;
-    margin:auto;
-    padding:10px 15px 30px;
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
 }
 
-.intro{
-    text-align:center;
-    margin:20px 0 30px;
-}
-
-.intro h2{
-    color:#1769aa;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
 }
 
 .card{
-    background:white;
-    padding:22px;
-    border-radius:14px;
-    box-shadow:0 3px 12px #ddd;
-    transition:0.2s;
-}
-
-.card:hover{
-    transform:translateY(-3px);
+  background:white;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .card h2{
-    color:#1769aa;
-    margin-top:0;
+  margin-top:0;
+  color:#2563eb;
+  font-size:21px;
 }
 
-input{
-    width:100%;
-    padding:12px;
-    margin:6px 0;
-    border:1px solid #ccc;
-    border-radius:7px;
-    font-size:15px;
+.card input{
+  width:100%;
+  padding:12px;
+  margin:7px 0;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-size:15px;
 }
 
-button{
-    width:100%;
-    padding:12px;
-    margin-top:8px;
-    background:#1769aa;
-    color:white;
-    border:0;
-    border-radius:7px;
-    font-size:16px;
-    cursor:pointer;
+.card button{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border:0;
+  border-radius:8px;
+  background:#2563eb;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
 }
 
-button:hover{
-    background:#0d47a1;
+.card button:hover{
+  opacity:.9;
 }
 
 .result{
-    margin-top:12px;
-    padding:12px;
-    background:#eef7ff;
-    border-radius:7px;
-    font-weight:bold;
-    line-height:1.6;
-    min-height:20px;
+  margin-top:12px;
+  font-weight:bold;
+  color:#111;
+  min-height:22px;
 }
 
-.info{
-    background:white;
-    margin-top:30px;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 2px 10px #ddd;
-}
-
-.info h2{
-    color:#1769aa;
+.about{
+  background:white;
+  margin-top:30px;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:20px;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:30px;
+  background:#111827;
+  color:white;
+}
+
+footer a{
+  color:white;
+  margin:0 7px;
+  text-decoration:none;
 }
 
 .hidden{
-    display:none;
+  display:none;
 }
 
-@media(max-width:500px){
-    header h1{
-        font-size:34px;
-    }
+@media(max-width:600px){
+  header h1{
+    font-size:30px;
+  }
 }
 </style>
 </head>
@@ -159,348 +142,75 @@ footer{
 <body>
 
 <header>
-    <h1>SmartCalc</h1>
-    <p>Free, Fast & Easy Online Calculators</p>
+  <h1>SmartCalc</h1>
+  <p>Free, Fast & Easy Online Calculators</p>
 </header>
 
 <div class="search">
-    <input
-        type="text"
-        id="search"
-        placeholder="🔍 Search calculator..."
-        onkeyup="searchCalculator()"
-    >
+  <input type="text" id="searchBox"
+  placeholder="Search calculator..."
+  onkeyup="searchCalculator()">
 </div>
 
 <div class="container">
 
-<div class="intro">
-    <h2>Online Calculators</h2>
-    <p>Choose a calculator below and get your result instantly.</p>
-</div>
-
-<div class="grid" id="calculatorGrid">
+<div class="cards">
 
 <!-- Percentage -->
 <div class="card">
-<h2>📊 Percentage Calculator</h2>
-
-<input id="n" type="number" placeholder="Enter number">
-<input id="p" type="number" placeholder="Enter percentage">
-
+<h2>Percentage Calculator</h2>
+<input type="number" id="percentNumber" placeholder="Enter number">
+<input type="number" id="percentValue" placeholder="Enter percentage">
 <button onclick="percent()">Calculate</button>
-
-<div class="result" id="r1"></div>
+<p class="result" id="percentResult"></p>
 </div>
-
 
 <!-- BMI -->
 <div class="card">
-<h2>⚖️ BMI Calculator</h2>
-
-<input id="w" type="number" placeholder="Weight (kg)">
-<input id="h" type="number" placeholder="Height (cm)">
-
+<h2>BMI Calculator</h2>
+<input type="number" id="bmiWeight" placeholder="Weight (kg)">
+<input type="number" id="bmiHeight" placeholder="Height (cm)">
 <button onclick="bmi()">Calculate BMI</button>
-
-<div class="result" id="r2"></div>
+<p class="result" id="bmiResult"></p>
 </div>
-
 
 <!-- Age -->
 <div class="card">
-<h2>🎂 Age Calculator</h2>
-
-<input id="dob" type="date">
-
+<h2>Age Calculator</h2>
+<input type="date" id="birthDate">
 <button onclick="age()">Calculate Age</button>
-
-<div class="result" id="r3"></div>
+<p class="result" id="ageResult"></p>
 </div>
 
-
-<!-- Test -->
+<!-- Test Score -->
 <div class="card">
-<h2>📝 Test Score Calculator</h2>
-
-<input id="obt" type="number" placeholder="Obtained Marks">
-<input id="tot" type="number" placeholder="Total Marks">
-
-<button onclick="score()">Calculate</button>
-
-<div class="result" id="r4"></div>
+<h2>Test Score Calculator</h2>
+<input type="number" id="obtained" placeholder="Obtained Marks">
+<input type="number" id="total" placeholder="Total Marks">
+<button onclick="score()">Calculate Score</button>
+<p class="result" id="scoreResult"></p>
 </div>
-
 
 <!-- Discount -->
 <div class="card">
-<h2>💰 Discount Calculator</h2>
-
-<input id="price" type="number" placeholder="Original Price">
-<input id="disc" type="number" placeholder="Discount %">
-
-<button onclick="discount()">Calculate</button>
-
-<div class="result" id="r5"></div>
+<h2>Discount Calculator</h2>
+<input type="number" id="price" placeholder="Original Price">
+<input type="number" id="discountRate" placeholder="Discount (%)">
+<button onclick="discount()">Calculate Discount</button>
+<p class="result" id="discountResult"></p>
 </div>
-
 
 <!-- GST -->
 <div class="card">
-<h2>🧾 GST Calculator</h2>
-
-<input id="amount" type="number" placeholder="Amount">
-<input id="gstRate" type="number" placeholder="GST %">
-
+<h2>GST Calculator</h2>
+<input type="number" id="gstPrice" placeholder="Amount">
+<input type="number" id="gstRate" placeholder="GST (%)">
 <button onclick="gst()">Calculate GST</button>
-
-<div class="result" id="r6"></div>
+<p class="result" id="gstResult"></p>
 </div>
 
-
-<!-- Interest -->
+<!-- Simple Interest -->
 <div class="card">
-<h2>💵 Simple Interest Calculator</h2><div class="card">
-  <h2>EMI / Loan Calculator</h2>
-  <input type="number" id="loanAmount" placeholder="Loan Amount">
-  <input type="number" id="loanRate" placeholder="Annual Interest Rate (%)">
-  <input type="number" id="loanYears" placeholder="Loan Period (Years)">
-  <button onclick="emi()">Calculate EMI</button>
-  <p id="emiResult"></p>
-</div>
-
-<input id="principal" type="number" placeholder="Principal Amount">
-<input id="rate" type="number" placeholder="Interest Rate %">
-<input id="time" type="number" placeholder="Time in Years">
-
-<button onclick="interest()">Calculate</button>
-
-<div class="result" id="r7"></div>
-</div>
-
-</div>
-
-
-<div class="info">
-<h2>About SmartCalc</h2>
-
-<p>
-SmartCalc provides simple and easy-to-use online calculators.
-You can calculate percentages, BMI, age, test scores, discounts,
-GST and simple interest quickly.
-</p>
-
-<p>
-Our goal is to provide useful calculators that work on both
-mobile phones and computers.
-</p>
-</div>
-
-</div>
-
-<footer>
-<p>© 2026 SmartCalc</p>
-<p>Free Online Calculator Tools</p>
-</footer>
-
-
-<script>
-
-function percent(){
-
-let n=Number(document.getElementById("n").value);
-let p=Number(document.getElementById("p").value);
-
-if(!n || !p){
-document.getElementById("r1").innerHTML="Enter both values";
-return;
-}
-
-document.getElementById("r1").innerHTML=
-p+"% of "+n+" = "+(n*p/100);
-}
-
-
-function bmi(){
-
-let w=Number(document.getElementById("w").value);
-let h=Number(document.getElementById("h").value);
-
-if(!w || !h){
-document.getElementById("r2").innerHTML="Enter weight and height";
-return;
-}
-
-let x=h/100;
-let b=w/(x*x);
-let s="";
-
-if(b<18.5)s="Underweight";
-else if(b<25)s="Normal Weight";
-else if(b<30)s="Overweight";
-else s="Obese";
-
-document.getElementById("r2").innerHTML=
-"BMI: "+b.toFixed(2)+"<br>"+s;
-}
-
-
-function age(){
-
-let d=document.getElementById("dob").value;
-
-if(!d){
-document.getElementById("r3").innerHTML=
-"Select date of birth";
-return;
-}
-
-let birth=new Date(d);
-let today=new Date();
-
-let a=today.getFullYear()-birth.getFullYear();
-
-if(
-today.getMonth()<birth.getMonth() ||
-(today.getMonth()==birth.getMonth() &&
-today.getDate()<birth.getDate())
-){
-a--;
-}
-
-document.getElementById("r3").innerHTML=
-"Your Age: "+a+" years";
-}
-
-
-function score(){
-
-let o=Number(document.getElementById("obt").value);
-let t=Number(document.getElementById("tot").value);
-
-if(!t){
-document.getElementById("r4").innerHTML=
-"Enter total marks";
-return;
-}
-
-let x=o/t*100;
-let g="";
-
-if(x>=80)g="A+";
-else if(x>=70)g="A";
-else if(x>=60)g="B";
-else if(x>=50)g="C";
-else if(x>=40)g="D";
-else g="Fail";
-
-document.getElementById("r4").innerHTML=
-"Percentage: "+x.toFixed(2)+"%<br>Grade: "+g;
-}
-
-
-function discount(){
-
-let price=Number(document.getElementById("price").value);
-let d=Number(document.getElementById("disc").value);
-
-if(!price || !d){
-document.getElementById("r5").innerHTML=
-"Enter both values";
-return;
-}
-
-let save=price*d/100;
-let final=price-save;
-
-document.getElementById("r5").innerHTML=
-"You Save: "+save.toFixed(2)+
-"<br>Final Price: "+final.toFixed(2);
-}
-
-
-function gst(){
-
-let a=Number(document.getElementById("amount").value);
-let g=Number(document.getElementById("gstRate").value);
-
-if(!a || !g){
-document.getElementById("r6").innerHTML=
-"Enter both values";
-return;
-}
-
-let tax=a*g/100;
-
-document.getElementById("r6").innerHTML=
-"GST: "+tax.toFixed(2)+
-"<br>Total: "+(a+tax).toFixed(2);
-}
-
-
-function interest(){
-
-let p=Number(document.getElementById("principal").value);
-let r=Number(document.getElementById("rate").value);
-let t=Number(document.getElementById("time").value);
-
-if(!p || !r || !t){
-document.getElementById("r7").innerHTML=
-"Fill all fields";
-return;
-}
-
-let si=p*r*t/100;
-
-document.getElementById("r7").innerHTML=
-"Interest: "+si.toFixed(2)+
-"<br>Total Amount: "+(p+si).toFixed(2);
-}
-
-
-function searchCalculator(){
-
-let search=document.getElementById("search").value.toLowerCase();
-let cards=document.querySelectorAll(".card");
-
-cards.forEach(function(card){
-
-let text=card.innerText.toLowerCase();
-
-if(text.includes(search)){
-card.classList.remove("hidden");
-}else{
-card.classList.add("hidden");
-}
-
-});
-
-}
-
-<script>
-function emi(){
-  let P = parseFloat(document.getElementById("loanAmount").value);
-  let annualRate = parseFloat(document.getElementById("loanRate").value);
-  let years = parseFloat(document.getElementById("loanYears").value);
-
-  if(!P || !annualRate || !years){
-    document.getElementById("emiResult").innerText = "Please enter all values.";
-    return;
-  }
-
-  let r = annualRate / 12 / 100;
-  let n = years * 12;
-
-  let monthlyEMI = (P * r * Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
-
-  document.getElementById("emiResult").innerText =
-    "Monthly EMI: " + monthlyEMI.toFixed(2);
-}
-</script>
-
-</body>
-</html><div style="text-align:center;padding:25px;">
-  <a href="about.html">About</a> |
-  <a href="contact.html">Contact</a> |
-  <a href="privacy.html">Privacy Policy</a>
-</div>
+<h2>Simple Interest Calculator</h2>
+<input type="number" id="principal" placeholder="Principal Amount">
+<input type="number" id="interest
