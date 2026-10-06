@@ -260,7 +260,14 @@ footer{
 
 <!-- Interest -->
 <div class="card">
-<h2>💵 Simple Interest Calculator</h2>
+<h2>💵 Simple Interest Calculator</h2><div class="card">
+  <h2>EMI / Loan Calculator</h2>
+  <input type="number" id="loanAmount" placeholder="Loan Amount">
+  <input type="number" id="loanRate" placeholder="Annual Interest Rate (%)">
+  <input type="number" id="loanYears" placeholder="Loan Period (Years)">
+  <button onclick="emi()">Calculate EMI</button>
+  <p id="emiResult"></p>
+</div>
 
 <input id="principal" type="number" placeholder="Principal Amount">
 <input id="rate" type="number" placeholder="Interest Rate %">
@@ -470,6 +477,25 @@ card.classList.add("hidden");
 
 }
 
+<script>
+function emi(){
+  let P = parseFloat(document.getElementById("loanAmount").value);
+  let annualRate = parseFloat(document.getElementById("loanRate").value);
+  let years = parseFloat(document.getElementById("loanYears").value);
+
+  if(!P || !annualRate || !years){
+    document.getElementById("emiResult").innerText = "Please enter all values.";
+    return;
+  }
+
+  let r = annualRate / 12 / 100;
+  let n = years * 12;
+
+  let monthlyEMI = (P * r * Math.pow(1+r,n)) / (Math.pow(1+r,n)-1);
+
+  document.getElementById("emiResult").innerText =
+    "Monthly EMI: " + monthlyEMI.toFixed(2);
+}
 </script>
 
 </body>
