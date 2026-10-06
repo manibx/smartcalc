@@ -5,136 +5,135 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SmartCalc - Free Online Calculators</title>
-<meta name="description" content="SmartCalc offers free, fast and easy online calculators including Percentage, BMI, Age, Discount, GST, Interest and EMI calculators.">
+<meta name="description" content="SmartCalc provides free and easy online calculators for percentage, BMI, age, test score, discount, GST, interest and EMI.">
 
 <style>
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f4f7fb;
-  color:#222;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+color:#222;
 }
 
 header{
-  background:#2563eb;
-  color:white;
-  text-align:center;
-  padding:30px 15px;
+background:#2563eb;
+color:white;
+text-align:center;
+padding:30px 15px;
 }
 
 header h1{
-  margin:0;
-  font-size:38px;
+margin:0;
+font-size:38px;
 }
 
 header p{
-  margin:8px 0 0;
-  font-size:17px;
+margin:8px 0 0;
+font-size:17px;
 }
 
 .search{
-  max-width:600px;
-  margin:25px auto;
-  padding:0 15px;
+max-width:600px;
+margin:25px auto;
+padding:0 15px;
 }
 
 .search input{
-  width:100%;
-  padding:15px;
-  border:1px solid #ddd;
-  border-radius:10px;
-  font-size:16px;
+width:100%;
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
 }
 
 .container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
+max-width:1100px;
+margin:auto;
+padding:20px;
 }
 
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
 .card{
-  background:white;
-  padding:22px;
-  border-radius:14px;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
+background:white;
+padding:22px;
+border-radius:14px;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .card h2{
-  margin-top:0;
-  color:#2563eb;
-  font-size:21px;
+margin-top:0;
+color:#2563eb;
+font-size:21px;
 }
 
 .card input{
-  width:100%;
-  padding:12px;
-  margin:7px 0;
-  border:1px solid #ddd;
-  border-radius:8px;
-  font-size:15px;
+width:100%;
+padding:12px;
+margin:7px 0;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:15px;
 }
 
 .card button{
-  width:100%;
-  padding:12px;
-  margin-top:8px;
-  border:0;
-  border-radius:8px;
-  background:#2563eb;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
+width:100%;
+padding:12px;
+margin-top:8px;
+border:0;
+border-radius:8px;
+background:#2563eb;
+color:white;
+font-size:16px;
+cursor:pointer;
 }
 
 .card button:hover{
-  opacity:.9;
+opacity:.9;
 }
 
 .result{
-  margin-top:12px;
-  font-weight:bold;
-  color:#111;
-  min-height:22px;
+margin-top:12px;
+font-weight:bold;
+min-height:22px;
 }
 
 .about{
-  background:white;
-  margin-top:30px;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 3px 12px rgba(0,0,0,.08);
+background:white;
+margin-top:30px;
+padding:25px;
+border-radius:14px;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 footer{
-  text-align:center;
-  padding:30px 15px;
-  margin-top:30px;
-  background:#111827;
-  color:white;
+text-align:center;
+padding:30px 15px;
+margin-top:30px;
+background:#111827;
+color:white;
 }
 
 footer a{
-  color:white;
-  margin:0 7px;
-  text-decoration:none;
+color:white;
+margin:0 7px;
+text-decoration:none;
 }
 
 .hidden{
-  display:none;
+display:none;
 }
 
 @media(max-width:600px){
-  header h1{
-    font-size:30px;
-  }
+header h1{
+font-size:30px;
+}
 }
 </style>
 </head>
@@ -142,21 +141,20 @@ footer a{
 <body>
 
 <header>
-  <h1>SmartCalc</h1>
-  <p>Free, Fast & Easy Online Calculators</p>
+<h1>SmartCalc</h1>
+<p>Free, Fast & Easy Online Calculators</p>
 </header>
 
 <div class="search">
-  <input type="text" id="searchBox"
-  placeholder="Search calculator..."
-  onkeyup="searchCalculator()">
+<input type="text" id="searchBox"
+placeholder="Search calculator..."
+onkeyup="searchCalculator()">
 </div>
 
 <div class="container">
 
 <div class="cards">
 
-<!-- Percentage -->
 <div class="card">
 <h2>Percentage Calculator</h2>
 <input type="number" id="percentNumber" placeholder="Enter number">
@@ -165,7 +163,6 @@ footer a{
 <p class="result" id="percentResult"></p>
 </div>
 
-<!-- BMI -->
 <div class="card">
 <h2>BMI Calculator</h2>
 <input type="number" id="bmiWeight" placeholder="Weight (kg)">
@@ -174,7 +171,6 @@ footer a{
 <p class="result" id="bmiResult"></p>
 </div>
 
-<!-- Age -->
 <div class="card">
 <h2>Age Calculator</h2>
 <input type="date" id="birthDate">
@@ -182,7 +178,6 @@ footer a{
 <p class="result" id="ageResult"></p>
 </div>
 
-<!-- Test Score -->
 <div class="card">
 <h2>Test Score Calculator</h2>
 <input type="number" id="obtained" placeholder="Obtained Marks">
@@ -191,7 +186,6 @@ footer a{
 <p class="result" id="scoreResult"></p>
 </div>
 
-<!-- Discount -->
 <div class="card">
 <h2>Discount Calculator</h2>
 <input type="number" id="price" placeholder="Original Price">
@@ -200,7 +194,6 @@ footer a{
 <p class="result" id="discountResult"></p>
 </div>
 
-<!-- GST -->
 <div class="card">
 <h2>GST Calculator</h2>
 <input type="number" id="gstPrice" placeholder="Amount">
@@ -209,8 +202,15 @@ footer a{
 <p class="result" id="gstResult"></p>
 </div>
 
-<!-- Simple Interest -->
 <div class="card">
 <h2>Simple Interest Calculator</h2>
 <input type="number" id="principal" placeholder="Principal Amount">
-<input type="number" id="interest
+<input type="number" id="interestRate" placeholder="Interest Rate (%)">
+<input type="number" id="interestTime" placeholder="Time (Years)">
+<button onclick="interest()">Calculate Interest</button>
+<p class="result" id="interestResult"></p>
+</div>
+
+<div class="card">
+<h2>EMI / Loan Calculator</h2>
+<input type="number" id="loanAmo
